@@ -4,7 +4,6 @@ import { Dashboard_u } from './Dashboard_u'
 import { Navbar_u } from './Navbar_u'
 import { Dashboard_u2 } from './Dashboard_u2'
 import { Link } from 'react-router-dom'
-import { Navbar_u2 } from './Navbar_u2'
 
 export const Dashboard_u_main = () => {
 
@@ -12,17 +11,9 @@ export const Dashboard_u_main = () => {
   var style2 = { textalign: "initial;" }
   return (
     <div class="layout-wrapper layout-navbar-full layout-horizontal layout-without-menu">
-    {/* // <div class="main-wrapper"> */}
       <Helmet>
         <title>User Dashboard</title>
-        <link rel="stylesheet" href="../assetsdoc/css/bootstrap.min.css" />
-        <link rel="stylesheet" href="../assetsdoc/plugins/fontawesome/css/fontawesome.min.css" />
-        <link rel="stylesheet" href="../assetsdoc/plugins/fontawesome/css/all.min.css" />
-        <link rel="stylesheet" href="../assetsdoc/css/feather.css" />
-        <link rel="stylesheet" href="../assetsdoc/css/custom.css" />
       </Helmet>
-      {/* <Navbar_u2/>
-      <Dashboard_u2 /> */}
       <div class="layout-container">
         <nav class="layout-navbar navbar navbar-expand-xl align-items-center bg-navbar-theme" id="layout-navbar">
           <div class="container-xxl">

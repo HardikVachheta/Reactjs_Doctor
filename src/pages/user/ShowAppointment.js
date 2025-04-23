@@ -8,7 +8,7 @@ import axios from 'axios';
 
 export const ShowAppointment = () => {
 
-    const [Appointment, setAppointment] = useState()
+    const [appointment, setAppointment] = useState()
 
 
     useEffect(() => {
@@ -138,7 +138,7 @@ export const ShowAppointment = () => {
                             <div class="col-md-7 col-lg-8 col-xl-12">
                                 <div class="row row-grid">
                                     {
-                                        Appointment?.map((u) => {
+                                        appointment?.map((u) => {
                                             return (
 
                                                 <div class="col-md-6 col-lg-4 col-xl-3">

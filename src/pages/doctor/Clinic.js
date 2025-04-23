@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Navbar_u } from '../userpage/Navbar_u'
+import { Navbar_u } from '../user/Navbar_u'
 import { Helmet } from 'react-helmet'
 import { Country, State, City } from 'country-state-city';
 import { useForm } from 'react-hook-form';

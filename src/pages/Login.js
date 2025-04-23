@@ -3,9 +3,9 @@ import React from 'react'
 import { Helmet } from 'react-helmet'
 import { useForm } from 'react-hook-form'
 import { Link, useNavigate } from 'react-router-dom'
-import { Dashboard_a } from './adminpage/Dashboard_a'
-import { Dashboard_d } from './doctorpage/Dashboard_d'
-import { Dashboard_u } from './userpage/Dashboard_u'
+import { Dashboard_a } from './admin/Dashboard_a'
+import { Dashboard_d } from './doctor/Dashboard_d'
+import { Dashboard_u } from './user/Dashboard_u'
 
 export const Login = () => {
 
@@ -21,6 +21,7 @@ export const Login = () => {
                 console.log(data)
                 console.log(res.data)
                 console.log(res.data.data[0].role.name)
+                localStorage.setItem("role",res.data.data[0].role.name)
                 console.log("id name :- ", res.data.data[0]?._id)
 
                 localStorage.setItem("id", res.data.data[0]?._id)
@@ -31,7 +32,7 @@ export const Login = () => {
                 }
                 else if (res.data.data[0]?.role.name === "Admin") {
                     // <Dashboard_a idname={res.data}/>
-                    navigate("/dashboard_a_main")
+                    navigate("/admin/dashboard")
                 }
                 else {
                     // <Dashboard_d idname={res.data.data[0]?._id}/>
@@ -53,30 +54,6 @@ export const Login = () => {
         <div class="light-style customizer-hide">
             <Helmet>
                 <title>Login Basic</title>
-                <link rel="canonical" href="https://themeselection.com/products/sneat-bootstrap-html-admin-template/" />
-                <link rel="icon" type="image/x-icon" href="../assets/img/favicon/favicon.ico" />
-                <link rel="preconnect" href="https://fonts.googleapis.com" />
-                <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
-                <link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&amp;display=swap" rel="stylesheet" />
-                <link rel="stylesheet" href="../assets/vendor/fonts/boxicons.css" />
-                <link rel="stylesheet" href="../assets/vendor/css/core.css" class="template-customizer-core-css" />
-                <link rel="stylesheet" href="../assets/vendor/css/theme-default.css" class="template-customizer-theme-css" />
-                <link rel="stylesheet" href="../assets/css/demo.css" />
-
-                <link rel="stylesheet" type="text/css" href="../assets/vendor/css/rtl/theme-default.css" class="template-customizer-theme-css" />
-                <link rel="stylesheet" href="../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
-                <link rel="stylesheet" href="../assets/vendor/css/pages/page-auth.css" />
-                {/* <script src="../assets/vendor/js/helpers.js"></script> */}
-                {/* <script src="../assets/js/config.js"></script> */}
-                {/* <script async="async" src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
-                <script src="../assets/vendor/libs/jquery/jquery.js"></script>
-                <script src="../assets/vendor/libs/popper/popper.js"></script>
-                <script src="../assets/vendor/js/bootstrap.js"></script>
-                <script src="../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script> */}
-
-                {/* <script src="../assets/vendor/js/menu.js"></script>
-                <script src="../assets/js/main.js"></script>
-                <script async defer src="https://buttons.github.io/buttons.js"></script> */}
             </Helmet>
             <div class="container-xxl">
                 <div class="authentication-wrapper authentication-basic container-p-y">

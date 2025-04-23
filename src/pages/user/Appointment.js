@@ -7,7 +7,7 @@ import { Link, useParams } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-export const Appointment2 = () => {
+export const Appointment = () => {
 
     var docid = useParams().id
     var useid = localStorage.getItem('id')

@@ -56,42 +56,9 @@ export const Register = () => {
     return (
         <div class="light-style customizer-hide">
             <Helmet>
-
                 <title>Register Page</title>
-                <link rel="canonical" href="https://themeselection.com/item/sneat-bootstrap-html-admin-template/"></link>
-                <link rel="icon" type="image/x-icon" href="../assets/img/favicon/favicon.ico" />
-                <link rel="preconnect" href="https://fonts.googleapis.com" />
-                <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-                <link
-                    href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
-                    rel="stylesheet"
-                />
-                <link rel="stylesheet" href="../assets/vendor/fonts/boxicons.css" />
-                <link rel="stylesheet" href="../assets/vendor/fonts/fontawesome.css" />
-                <link rel="stylesheet" href="../assets/vendor/fonts/flag-icons.css" />
-                <link rel="stylesheet" href="../assets/vendor/css/core.css" class="template-customizer-core-css" />
-                <link rel="stylesheet" href="../assets/vendor/css/theme-default.css" class="template-customizer-theme-css" />
-                <link rel="stylesheet" href="../assets/css/demo.css" />
-                <link rel="stylesheet" href="../assets/vendor/css/pages/page-auth.css" />
-                <link rel="stylesheet" href="../assets/vendor/libs/animate-css/animate.css" />
-                <link rel="stylesheet" href="../assets/vendor/libs/sweetalert2/sweetalert2.css" />
-                <link rel="stylesheet" href="../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
-                <link rel="stylesheet" href="../assets/vendor/libs/typeahead-js/typeahead.css" />
-                <link rel="stylesheet" type="text/css" href="../assets/vendor/css/rtl/core.css" class="template-customizer-core-css" />
-                <link rel="stylesheet" type="text/css" href="../assets/vendor/css/rtl/theme-default.css" class="template-customizer-theme-css" />
-
-                <script src="../assets/vendor/libs/jquery/jquery.js"></script>
-                <script src="../assets/vendor/libs/popper/popper.js"></script>
-                <script src="../assets/vendor/js/bootstrap.js"></script>
-                <script src="../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
-                <script src="../assets/vendor/js/helpers.js"></script>
-                {/* <script src="../assets/vendor/js/menu.js"></script> */}
-                <script src="../assets/js/main.js"></script>
-                {/* <script src="../assets/js/config.js"/> */}
-                <script async defer src="https://buttons.github.io/buttons.js"></script>
-
             </Helmet>
-            
+
             <div class="container-xxl">
                 <div class="authentication-wrapper authentication-basic container-p-y">
                     <div class="authentication-inner">
@@ -99,11 +66,11 @@ export const Register = () => {
                             <div class="card-body">
                                 <div class="justify-content-center">
                                     <Link to="#" class="app-brand-link">
-                                        
+
                                         <span class="justify-content-center">&emsp;&emsp;&emsp;&emsp;&emsp;
                                             <img src='assetsdoc/img/brand/brand-logo-02.png' />
                                         </span>
-                                        
+
                                     </Link>
 
                                 </div>
@@ -234,7 +201,7 @@ export const Register = () => {
                                 </p>
                             </div>
                         </div>
-                        
+
                     </div>
                 </div>
             </div >
