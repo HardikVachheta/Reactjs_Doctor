@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import { Helmet } from 'react-helmet'
-import { Navbar_a } from './Navbar_a'
 import { UserList } from './UserList'
 import axios from 'axios'
 
@@ -60,27 +59,23 @@ export const DashboardAdmin = () => {
   };
 
   return (
-    <div className="layout-page">
-      <div className="content-wrapper">
-        <div className="container-xxl flex-grow-1 container-p-y">
-          <h4 className="fw-bold py-3 mb-4">Admin Dashboard</h4>
-          <div className="row g-4 mb-4">
-            {['Users', 'Admins', 'Doctors', 'Clinics'].map((label, idx) => (
-              <div key={idx} className="col-lg-3 col-md-6 col-sm-12">
-                <div className="card text-center">
-                  <div className="card-body">
-                    <h2><i className={`bx bx-${getIcon(label)} display-6`}></i></h2>
-                    <h4>{label}</h4>
-                    <h5>{counts[label.toLowerCase()]}</h5>
-                  </div>
-                </div>
+    <>
+      <h4 className="fw-bold py-3 mb-4">Admin Dashboard</h4>
+      <div className="row g-4 mb-4">
+        {['Users', 'Admins', 'Doctors', 'Clinics'].map((label, idx) => (
+          <div key={idx} className="col-lg-3 col-md-6 col-sm-12">
+            <div className="card text-center">
+              <div className="card-body">
+                <h2><i className={`bx bx-${getIcon(label)} display-6`}></i></h2>
+                <h4>{label}</h4>
+                <h5>{counts[label.toLowerCase()]}</h5>
               </div>
-            ))}
+            </div>
           </div>
-          <UserList />
-        </div>
+        ))}
       </div>
-    </div>
+      <UserList />
+    </>
   );
 };
 

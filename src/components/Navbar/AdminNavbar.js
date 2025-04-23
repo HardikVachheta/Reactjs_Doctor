@@ -77,8 +77,8 @@ export const AdminNavbar = () => {
                 </li>
 
                 {/* Users */}
-                <li className={`menu-item ${isActive('/UserList') ? 'active' : ''}`}>
-                    <Link to="/UserList" className="menu-link">
+                <li className={`menu-item ${isActive('/admin/userList') ? 'active' : ''}`}>
+                    <Link to="/admin/userList" className="menu-link">
                         <i className="menu-icon tf-icons bx bx-user"></i>
                         <div data-i18n="Users">Users</div>
                     </Link>

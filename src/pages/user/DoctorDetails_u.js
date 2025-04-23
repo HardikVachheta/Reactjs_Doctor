@@ -183,7 +183,7 @@ export const DoctorDetails_u = () => {
                                         </a>
                                     </div> */}
                                     <div class="clinic-booking">
-                                        <Link to={`/Appointment2/${users?.userId?._id}`} class="apt-btn">Book Appointment</Link>
+                                        <Link to={`/Appointment/${users?.userId?._id}`} class="apt-btn">Book Appointment</Link>
                                     </div>
                                 </div>
                             </div>

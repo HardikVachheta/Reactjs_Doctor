@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import { Navbar_a } from './Navbar_a'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
 
@@ -52,44 +51,38 @@ export const AllDoctors = () => {
     }
 
     return (
-        <div class="layout-page">
-            <div class="content-wrapper">
-                <div class="container-xxl flex-grow-1 container-p-y">
-                    <h4 class="fw-bold py-3 mb-4">All Doctors</h4>
-                    <div class="row mb-4">
-                        {
-                            users?.map((u) => {
-                                return (
-                                    <>
-                                        <div class="col-12 col-sm-6 col-lg-4 mb-4">
-                                            <div class="card">
-                                                <div class="card-body text-center d-flex align-items-center">
-                                                    <div class="d-flex">
-                                                        <div class="avatar avatar-xl">
-                                                            {/* <img src="../assets/img/avatars/1.png" alt="Avatar" class="rounded-circle" /> */}
-                                                            <img class="rounded-circle" alt="User Image" src={`${process.env.PUBLIC_URL}/Photos/${u?.profile_pic}`} />
-                                                        </div>
-                                                    </div>
-                                                    <div class="d-flex">
-                                                        <div class="card-body text-center">
-                                                            <p>Name : {u.userId.fname}<br></br>
-                                                                Specialization : {u.specialization}</p>
-                                                            <Link to={`/viewprofile/${u.userId._id}`}>ViewProfile</Link>
-                                                        </div>
-                                                    </div>
+        <>
+            <h4 class="fw-bold py-3 mb-4">All Doctors</h4>
+            <div class="row mb-4">
+                {
+                    users?.map((u) => {
+                        return (
+                            <>
+                                <div class="col-12 col-sm-6 col-lg-4 mb-4">
+                                    <div class="card">
+                                        <div class="card-body text-center d-flex align-items-center">
+                                            <div class="d-flex">
+                                                <div class="avatar avatar-xl">
+                                                    {/* <img src="../assets/img/avatars/1.png" alt="Avatar" class="rounded-circle" /> */}
+                                                    <img class="rounded-circle" alt="User Image" src={`${process.env.PUBLIC_URL}/Photos/${u?.profile_pic}`} />
                                                 </div>
                                             </div>
-                                        </div >
-                                    </>
-                                )
-                            })
-                        }
+                                            <div class="d-flex">
+                                                <div class="card-body text-center">
+                                                    <p>Name : {u.userId.fname}<br></br>
+                                                        Specialization : {u.specialization}</p>
+                                                    <Link to={`/viewprofile/${u.userId._id}`}>ViewProfile</Link>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div >
+                            </>
+                        )
+                    })
+                }
 
-                    </div>
-
-                </div>
             </div>
-        </div>
-
+        </>
     )
 }

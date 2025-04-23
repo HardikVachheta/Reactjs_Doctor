@@ -1,13 +1,10 @@
 import React, { useEffect } from 'react'
-import { DoctorProfile } from './DoctorProfile'
-import { Navbar } from '../Navbar'
 import { Helmet } from 'react-helmet'
 import axios from 'axios'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-// import { format } from 'date-fns'
 
-export const Dashboard_d = () => {
+export const DoctorDashboard = () => {
 
 
   var s1 = { transform: " none;", minHeight: "201.684px;" }
@@ -41,6 +38,7 @@ export const Dashboard_d = () => {
     })
   }
 
+  // export const DoctorDashboard = () => {
   return (
     <>
       <Helmet>
@@ -71,7 +69,7 @@ export const Dashboard_d = () => {
                       <a href="patient-profile.html" class="booking-doc-img">
                         {/* <img src="assetsdoc/img/patients/patient.jpg" alt="User Image" /> */}
                         {
-                          u?.patientId.gender === "Female" ? <img src="../assets/img/avatars/2.png" alt="user image"  /> :
+                          u?.patientId.gender === "Female" ? <img src="../assets/img/avatars/2.png" alt="user image" /> :
                             <img src="../assets/img/avatars/1.png" alt="user image" />
                         }
                       </a>
@@ -110,3 +108,6 @@ export const Dashboard_d = () => {
     </>
   )
 }
+
+
+

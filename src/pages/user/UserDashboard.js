@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { Helmet } from 'react-helmet'
 import { Link } from 'react-router-dom'
 
-export const Dashboard_u2 = () => {
+export const UserDashboard = () => {
     var s2 = { minHeight: "479.219px" }
     var s3 = { transform: " none;" }
 
@@ -82,7 +82,7 @@ export const Dashboard_u2 = () => {
                                         <div class="col-sm-6 col-md-4 col-xl-6">
                                             <div class="profile-widget">
                                                 <div class="doc-img">
-                                                    <Link to={`/DoctorDetails_u/${u._id}`}>
+                                                    <Link to={`/user/doctor-details/${u._id}`}>
                                                         <img class="img-fluid" alt="User Image" src={`${process.env.PUBLIC_URL}/Photos/${u?.profile_pic}`} />
                                                     </Link>
                                                     {/* <a href="javascript:void(0)" class="fav-btn">
@@ -91,7 +91,7 @@ export const Dashboard_u2 = () => {
                                                 </div>
                                                 <div class="pro-content">
                                                     <h3 class="title">
-                                                        <Link to={`/DoctorDetails_u/${u._id}`} >Dr. {u.userId.fname}</Link>
+                                                        <Link to={`/user/doctor-details/${u._id}`} >Dr. {u.userId.fname}</Link>
                                                         <i class="fas fa-check-circle verified"></i>
                                                     </h3>
                                                     <p class="speciality">{u.qualification} <br></br>Specialist : {u.specialization}</p>
@@ -114,10 +114,10 @@ export const Dashboard_u2 = () => {
                                                     </ul>
                                                     <div class="row row-sm">
                                                         <div class="col-6">
-                                                            <Link to={`/DoctorDetails_u/${u._id}`} class="btn view-btn">View Profile</Link>
+                                                            <Link to={`/user/doctor-details/${u._id}`} class="btn view-btn">View Profile</Link>
                                                         </div>
                                                         <div class="col-6">
-                                                            <Link to={`/Appointment2/${u?.userId?._id}`} class="btn book-btn">Appointment</Link>
+                                                            <Link to={`/Appointment/${u?.userId?._id}`} class="btn book-btn">Appointment</Link>
                                                         </div>
                                                     </div>
                                                 </div>

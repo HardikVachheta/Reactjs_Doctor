@@ -9,29 +9,28 @@ import { ForgotPassword } from './pages/ForgotPassword';
 import { Error } from './pages/Error';
 
 
-import { Dashboard_d } from './pages/doctor/Dashboard_d';
-import { Dashboard_a } from './pages/admin/Dashboard_a';
-import { Dashboard_u } from './pages/user/Dashboard_u';
+// import { Dashboard_d } from './pages/doctor/Dashboard_d';
+// import { Dashboard_u } from './pages/user/Dashboard_u';
 
-
-import { Dashboard_u_main } from './pages/user/DashboardUser';
-import { Dashboard_d_main } from './pages/doctor/Dashboard_d_main';
-import { Dashboard_a_main } from './pages/admin/DashboardAdmin';
-import { DoctorProfile } from './pages/doctor/DoctorProfile';
-import { UserProfile } from './pages/user/UserProfile';
-import { AdminProfile } from './pages/admin/AdminProfile';
-import { UserList } from './pages/admin/UserList';
-import { All_Doctor } from './pages/admin/AllDoctors';
-import { Clinic } from './pages/doctor/Clinic';
-import { ClinicView } from './pages/doctor/ClinicView';
-import { DoctorDetails_u } from './pages/user/DoctorDetails_u';
+// import { DoctorDashboard } from './pages/doctor/DoctorDashboard';
+// // import { Dashboard_a_main } from './pages/admin/DashboardAdmin';
+// // import { DoctorProfile } from './pages/doctor/DoctorProfile';
+// import { UserProfile } from './pages/user/UserProfile';
+// import { AdminProfile } from './pages/admin/AdminProfile';
+// import { UserList } from './pages/admin/UserList';
+// import { All_Doctor } from './pages/admin/AllDoctors';
+// import { Clinic } from './pages/doctor/Clinic';
+// import { ClinicView } from './pages/doctor/ClinicView';
+// import { DoctorDetails_u } from './pages/user/DoctorDetails_u';
 import { ViewProfile1 } from './pages/doctor/ViewProfile1';
-import { Dashboard_u2 } from './pages/user/Dashboard_u2';
+// import { Dashboard_u2 } from './pages/user/Dashboard_u2';
 import { Logout } from './pages/Logout';
-import { ShowAppointment } from './pages/user/ShowAppointment';
+// import { ShowAppointment } from './pages/user/ShowAppointment';
 import { Appointment } from './pages/user/Appointment';
 import { AdminRoutes } from './routes/AdminRoutes';
 import { useEffect, useState } from 'react';
+import { DoctorRoutes } from './routes/DoctorRoutes';
+import { UserRoutes } from './routes/UserRoutes';
 
 
 
@@ -53,7 +52,6 @@ function App() {
   }
   return (
     <div className="App">
-      {/* <UserList/> */}
       <Helmet>
         <link rel="icon" type="image/x-icon" href="../assets/img/favicon/favicon.ico" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -169,24 +167,36 @@ function App() {
         {/* Redirect or show a fallback page if role is not found */}
         {!userRole && <Route path="*" element={<Navigate to="/login" />} />}
 
-        {/* --------------------DOCTOR PAGES-------------------- */}
-        <Route path='/dashboard_u_main' element={<Dashboard_u_main />} />
-        <Route path='/dashboard_d' element={<Dashboard_d />} />
-        <Route path='/UserProfile' element={<UserProfile />} />
-        <Route path='/viewprofile/:id' element={<ViewProfile1 />} />
-        <Route path='/Clinic' element={<Clinic />} />
-        <Route path='/ClinicView' element={<ClinicView />} />
+        {/* --------------------DOCTOR PAGES---------------------- */}
+        {userRole === 'Doctor' && <Route path="/*" element={<DoctorRoutes />} />}
 
-        {/* --------------------USER PAGES---------------------- */}
-        <Route path='/dashboard_d_main' element={<Dashboard_d_main />} />
+
+        {/* <Route path='/dashboard_d_main' element={<DoctorDashboard />} />
         <Route path='/dashboard_u' element={<Dashboard_u />} />
         <Route path='/dashboard_u2' element={<Dashboard_u2 />} />
 
         <Route path='/DoctorProfile' element={<DoctorProfile />} />
-        <Route path='/DoctorDetails_u/:id' element={<DoctorDetails_u />} />
-        <Route path='/DoctorDetails_u/' element={<DoctorDetails_u />} />
+        */}
+
+
+
+        {/* --------------------USER PAGES-------------------- */}
+        {userRole === 'User' && <Route path="/*" element={<UserRoutes />} />}
+
+
+        {/* <Route path='/user/dashboard' element={<UserDashboard />} /> */}
+        {/* <Route path='/dashboard_d' element={<Dashboard_d />} /> */}
+        {/* <Route path='/UserProfile' element={<UserProfile />} /> */}
+        <Route path='/viewprofile/:id' element={<ViewProfile1 />} />
+        {/* <Route path='/DoctorDetails_u/:id' element={<DoctorDetails_u />} /> */}
+        {/* <Route path='/DoctorDetails_u/' element={<DoctorDetails_u />} /> */}
+        {/* <Route path='/ShowAppointment' element={<ShowAppointment />} /> */}
         <Route path='/Appointment/:id' element={<Appointment />} />
-        <Route path='/ShowAppointment' element={<ShowAppointment />} />
+        {/* <Route path='/Clinic' element={<Clinic />} /> */}
+        {/* <Route path='/ClinicView' element={<ClinicView />} /> */}
+
+
+
         <Route path='/Logout' element={<Logout />} />
 
       </Routes>

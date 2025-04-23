@@ -195,7 +195,7 @@ export const Appointment = () => {
 
                                                         <div class="submit-section submit-btn-bottom pt-4">
                                                             <button type="submit" class="btn btn-primary prime-btn me-4">Send</button>
-                                                            <Link to={'/dashboard_u_main'} type="reset" class="btn btn-label-secondary">Cancel</Link>
+                                                            <Link to={'/user/dashboard'} type="reset" class="btn btn-label-secondary">Cancel</Link>
                                                         </div>
                                                         {/* <div class="pt-4">
                                                             <button type="submit" style={{backgroundColor: "#0979e5;"}} class="btn btn-primary">Submit</button>

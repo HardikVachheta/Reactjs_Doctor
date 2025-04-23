@@ -28,12 +28,14 @@ export const DoctorNavbar = () => {
                 <link rel="stylesheet" href="../assets/css/demo.css" />
                 <link rel="stylesheet" href="../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
                 <link rel="stylesheet" href="../assets/vendor/libs/apex-charts/apex-charts.css" />
+                <script src="../assets/vendor/js/menu.js"></script>
+
             </Helmet>
 
             <div className="justify-content-center">
                 <Link to="#" className="app-brand-link">
                     <span className="justify-content-center">
-                        <img src='assetsdoc/img/brand/brand-logo-02-removebg-preview.png' alt="Brand Logo" />
+                        <img src='/assetsdoc/img/brand/brand-logo-02-removebg-preview.png' alt="Brand Logo" />
                     </span>
                 </Link>
             </div>
@@ -42,32 +44,32 @@ export const DoctorNavbar = () => {
 
             <ul className="menu-inner py-1">
                 {/* Dashboard */}
-                <li className={`menu-item ${isActive('/dashboard_d_main') ? 'active' : ''}`}>
-                    <Link to="/dashboard_d_main" className="menu-link">
+                <li className={`menu-item ${isActive('/doctor/dashboard') ? 'active' : ''}`}>
+                    <Link to="/doctor/dashboard" className="menu-link">
                         <i className="menu-icon tf-icons bx bx-home-circle"></i>
                         <div data-i18n="Analytics">Dashboard</div>
                     </Link>
                 </li>
 
                 {/* Profile */}
-                <li className={`menu-item ${isActive('/DoctorProfile') ? 'active' : ''}`}>
-                    <Link to="/DoctorProfile" className="menu-link">
+                <li className={`menu-item ${isActive('/doctor/profile') ? 'active' : ''}`}>
+                    <Link to="/doctor/profile" className="menu-link">
                         <i className="menu-icon tf-icons bx bx-layout"></i>
                         <div data-i18n="Layouts">Profile</div>
                     </Link>
                 </li>
 
                 {/* Clinic Page */}
-                <li className={`menu-item ${isActive('/Clinic') ? 'active' : ''}`}>
-                    <Link to="/Clinic" className="menu-link">
+                <li className={`menu-item ${isActive('/doctor/clinic') ? 'active' : ''}`}>
+                    <Link to="/doctor/clinic" className="menu-link">
                         <i className="menu-icon tf-icons bx bx-dock-top"></i>
                         <div data-i18n="Account Settings">Clinic Page</div>
                     </Link>
                 </li>
 
                 {/* Clinic View */}
-                <li className={`menu-item ${isActive('/ClinicView') ? 'active' : ''}`}>
-                    <Link to="/ClinicView" className="menu-link">
+                <li className={`menu-item ${isActive('/doctor/clinicView') ? 'active' : ''}`}>
+                    <Link to="/doctor/clinicView" className="menu-link">
                         <i className="menu-icon tf-icons bx bx-lock-open-alt"></i>
                         <div data-i18n="Authentications">Clinic View</div>
                     </Link>

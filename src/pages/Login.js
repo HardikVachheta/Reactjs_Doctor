@@ -3,9 +3,6 @@ import React from 'react'
 import { Helmet } from 'react-helmet'
 import { useForm } from 'react-hook-form'
 import { Link, useNavigate } from 'react-router-dom'
-import { Dashboard_a } from './admin/Dashboard_a'
-import { Dashboard_d } from './doctor/Dashboard_d'
-import { Dashboard_u } from './user/Dashboard_u'
 
 export const Login = () => {
 
@@ -28,7 +25,7 @@ export const Login = () => {
                 console.log(res.data.data[0]?.role.name)
                 if (res.data.data[0]?.role.name === "User") {
                     // <Dashboard_u idname={res.data.data[0]?._id}/>
-                    navigate("/dashboard_u_main")
+                    navigate("/user/dashboard")
                 }
                 else if (res.data.data[0]?.role.name === "Admin") {
                     // <Dashboard_a idname={res.data}/>
@@ -36,7 +33,7 @@ export const Login = () => {
                 }
                 else {
                     // <Dashboard_d idname={res.data.data[0]?._id}/>
-                    navigate("/dashboard_d_main")
+                    navigate("/doctor/dashboard")
                 }
                 //role...
 
