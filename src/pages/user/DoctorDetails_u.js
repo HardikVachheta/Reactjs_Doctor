@@ -1,4 +1,4 @@
-import axios from 'axios'
+import axios from '../../utils/axiosConfig';
 import React, { useEffect, useState } from 'react'
 import { Helmet } from 'react-helmet'
 import { Link, useParams } from 'react-router-dom'
@@ -23,7 +23,7 @@ export const DoctorDetails_u = () => {
     }, [])
 
     const getSpecification = () => {
-        axios.get("http://localhost:4000/doctor/get1/" + id).then((res) => {
+        axios.get("/doctor/get1/" + id).then((res) => {
 
             console.log("doctors........... :- ", res.data.data)
             setUsers(res.data.data)
@@ -32,7 +32,7 @@ export const DoctorDetails_u = () => {
             var docid = res.data.data.userId._id
 
 
-            axios.get("http://localhost:4000/clinic/get").then((res) => {
+            axios.get("/clinic/get").then((res) => {
                 console.log(res.data.data)
                 // console.log("doctor id get", docid)
                 // console.log("doctor id get 2",res.data.data?.doctorId._id)
@@ -64,7 +64,7 @@ export const DoctorDetails_u = () => {
 
 
     // const getSpecification = () => {
-    //     axios.get("http://localhost:4000/doctor/get2").then((res) => {
+    //     axios.get("/doctor/get2").then((res) => {
 
     //         console.log("doctors........... :- ", res)
     //         // console.log("Users id :- ", res.data.users[0]?.userId[0]?._id)

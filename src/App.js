@@ -22,7 +22,7 @@ import { Error } from './pages/Error';
 // import { Clinic } from './pages/doctor/Clinic';
 // import { ClinicView } from './pages/doctor/ClinicView';
 // import { DoctorDetails_u } from './pages/user/DoctorDetails_u';
-import { ViewProfile1 } from './pages/doctor/ViewProfile1';
+// import { ViewProfile1 } from './pages/admin/ViewProfile1';
 // import { Dashboard_u2 } from './pages/user/Dashboard_u2';
 import { Logout } from './pages/Logout';
 // import { ShowAppointment } from './pages/user/ShowAppointment';
@@ -187,7 +187,7 @@ function App() {
         {/* <Route path='/user/dashboard' element={<UserDashboard />} /> */}
         {/* <Route path='/dashboard_d' element={<Dashboard_d />} /> */}
         {/* <Route path='/UserProfile' element={<UserProfile />} /> */}
-        <Route path='/viewprofile/:id' element={<ViewProfile1 />} />
+        {/* <Route path='/viewprofile/:id' element={<ViewProfile1 />} /> */}
         {/* <Route path='/DoctorDetails_u/:id' element={<DoctorDetails_u />} /> */}
         {/* <Route path='/DoctorDetails_u/' element={<DoctorDetails_u />} /> */}
         {/* <Route path='/ShowAppointment' element={<ShowAppointment />} /> */}

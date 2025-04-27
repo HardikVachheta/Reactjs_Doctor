@@ -1,4 +1,4 @@
-import axios from 'axios'
+import axios from '../../utils/axiosConfig';
 import React, { useEffect, useState } from 'react'
 import { Helmet } from 'react-helmet'
 import { Link } from 'react-router-dom'
@@ -19,7 +19,7 @@ export const UserDashboard = () => {
 
 
     const getSpecification = () => {
-        axios.get("http://localhost:4000/doctor/get2").then((res) => {
+        axios.get("/doctor/get2").then((res) => {
 
             console.log("doctors........... :- ", res)
             // console.log("Users id :- ", res.data.users[0]?.userId[0]?._id)

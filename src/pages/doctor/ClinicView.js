@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import axios from 'axios'
+import axios from '../../utils/axiosConfig';
 
 export const ClinicView = () => {
     // var txt1 = { textAlign: "center;" }
@@ -26,7 +26,7 @@ export const ClinicView = () => {
 
         var id = localStorage.getItem('id')
 
-        axios.get("http://localhost:4000/clinic/get1/" + id).then((res) => {
+        axios.get("/clinic/get1/" + id).then((res) => {
             console.log(res.data.data)
             setClinic(res.data.data)
 

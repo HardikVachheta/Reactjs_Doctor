@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { Helmet } from 'react-helmet'
-import axios from 'axios'
+import axios from '../../utils/axiosConfig';
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 
@@ -21,7 +21,7 @@ export const DoctorDashboard = () => {
 
   const getAppointment = () => {
 
-    axios.get("http://localhost:4000/appointment/get/" + id).then((res) => {
+    axios.get("/appointment/get/" + id).then((res) => {
 
       console.log(res.data.data)
       setAppointment(res.data.data)
@@ -31,7 +31,7 @@ export const DoctorDashboard = () => {
   }
 
   const deleteUser = (id) => {
-    axios.delete("http://localhost:4000/appointment/delete/" + id).then((res) => {
+    axios.delete("/appointment/delete/" + id).then((res) => {
       getAppointment()
     }).catch((err) => {
       console.log(err)

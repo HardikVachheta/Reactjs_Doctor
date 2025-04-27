@@ -1,4 +1,4 @@
-import axios from 'axios'
+import axios from '../../utils/axiosConfig';
 import React, { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
 
@@ -45,7 +45,7 @@ export const DoctorProfile = () => {
         formData.append("userId", data.userId)
 
         console.log("form data....", formData)
-        axios.post("http://localhost:4000/doctor/upload", formData).then((res) => {
+        axios.post("/doctor/upload", formData).then((res) => {
 
             console.log("main data =============", res)
             if (res.status === 201) {
@@ -65,7 +65,7 @@ export const DoctorProfile = () => {
 
     const getUser = () => {
         var id = localStorage.getItem('id')
-        axios.get("http://localhost:4000/user/user/" + id).then((res) => {
+        axios.get("/user/user/" + id).then((res) => {
             // console.log("user data------", res)
             console.log("get user.......", res.data.data)
             if (res.data.data?.role.name === "Doctor") {
@@ -84,7 +84,7 @@ export const DoctorProfile = () => {
     const getSpecification = () => {
 
         var id = localStorage.getItem('id')
-        axios.get("http://localhost:4000/doctor/get").then((res) => {
+        axios.get("/doctor/get").then((res) => {
 
             console.log("get Specification1........... :- ", res.data.users)
             console.log("get Specification2........... :- ", res.data.data)
@@ -111,7 +111,7 @@ export const DoctorProfile = () => {
 
     const handleupdate = (event) => {
         event.preventDefault();
-        axios.put("http://localhost:4000/user/update/" + id, values).then((res) => {
+        axios.put("/user/update/" + id, values).then((res) => {
 
             if (res.status === 200) {
                 toast.success('Your Data Updated Successfully...', {

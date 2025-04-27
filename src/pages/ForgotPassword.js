@@ -1,4 +1,4 @@
-import axios from 'axios'
+import axios from '../utils/axiosConfig';
 import React from 'react'
 import { Helmet } from 'react-helmet'
 import { useForm } from 'react-hook-form'
@@ -14,7 +14,7 @@ export const ForgotPassword = () => {
     var navigate = useNavigate()
 
     const submit = (data) => {
-        axios.post('http://localhost:4000/user/user/forgot', data).then((res) => {
+        axios.post('/user/user/forgot', data).then((res) => {
             if (res.data) {
                 console.log("user forgot password..." + data)
                 toast.success('Send password on your email address ', {

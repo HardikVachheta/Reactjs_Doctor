@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Helmet } from 'react-helmet'
 import { UserList } from './UserList'
-import axios from 'axios'
+import axios from '../../utils/axiosConfig';
 
 export const DashboardAdmin = () => {
   const [counts, setCounts] = useState({
@@ -18,7 +18,7 @@ export const DashboardAdmin = () => {
 
   const getUserCount = async () => {
     try {
-      const response = await axios.get("http://localhost:4000/user/user1/");
+      const response = await axios.get("/user/user1/");
       const users = response.data.users;
 
       let userCount = 0, doctorCount = 0, adminCount = 0;
@@ -46,7 +46,7 @@ export const DashboardAdmin = () => {
 
   const getClinicCount = async () => {
     try {
-      const response = await axios.get("http://localhost:4000/clinic/get");
+      const response = await axios.get("/clinic/get");
       const clinicCount = response.data.data.length;
 
       setCounts(prevState => ({

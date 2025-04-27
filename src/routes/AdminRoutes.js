@@ -1,6 +1,6 @@
 import React from 'react'
 import { AdminNavbar } from '../components/Navbar/AdminNavbar'
-import { AdminProfile, AllDoctors, DashboardAdmin, UserList } from '../pages/admin';
+import { AdminProfile, AllDoctors, DashboardAdmin, UserList, ViewProfile } from '../pages/admin';
 import { Route, Routes } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 
@@ -20,6 +20,7 @@ export const AdminRoutes = () => {
                 <Route path="/admin/profile" element={<AdminProfile />} />
                 <Route path="/admin/doctors" element={<AllDoctors />} />
                 <Route path='/admin/userList' element={<UserList />} />
+                <Route path='/admin/viewprofile/:id' element={<ViewProfile />} />
                 {/* Add more admin-specific routes here */}
               </Routes>
             </div>

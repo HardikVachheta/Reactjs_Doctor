@@ -1,4 +1,4 @@
-import axios from 'axios'
+import axios from '../../utils/axiosConfig';
 import React, { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { ToastContainer, toast } from 'react-toastify';
@@ -30,7 +30,7 @@ export const UserProfile = () => {
 
     const getUser = () => {
         var id = localStorage.getItem('id')
-        axios.get("http://localhost:4000/user/user/" + id).then((res) => {
+        axios.get("/user/user/" + id).then((res) => {
             console.log(res)
             // console.log(".......", res.data.data)
             if (res.data.data?.role.name === "User") {
@@ -48,7 +48,7 @@ export const UserProfile = () => {
 
     const handleupdate = (event) => {
         event.preventDefault();
-        axios.put("http://localhost:4000/user/update/" + id, values).then((res) => {
+        axios.put("/user/update/" + id, values).then((res) => {
 
             if (res.status === 200) {
                 toast.success('Your Data Updated Successfully...', {

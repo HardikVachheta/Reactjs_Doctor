@@ -1,4 +1,4 @@
-import axios from 'axios'
+import axios from '../utils/axiosConfig.js'
 import React from 'react'
 import { Helmet } from 'react-helmet'
 import { useForm } from 'react-hook-form'
@@ -12,7 +12,7 @@ export const Login = () => {
 
     const submit = (data) => {
 
-        axios.post('http://localhost:4000/user/user/login', data).then((res) => {
+        axios.post('/user/user/login', data).then((res) => {
             if (res.data) {
                 console.log("user found....")
                 console.log(data)
@@ -41,6 +41,7 @@ export const Login = () => {
 
         }).catch((err) => {
             console.log("user not found....")
+            console.log("path....",process.env.REACT_APP_API_URL) 
             alert("user not found....")
         })
     }

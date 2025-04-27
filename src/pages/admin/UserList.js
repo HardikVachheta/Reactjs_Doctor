@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios from '../../utils/axiosConfig';
 import React, { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet';
 import { ToastContainer, toast } from 'react-toastify';
@@ -16,7 +16,7 @@ export const UserList = () => {
 
     // Fetch all users
     const getUser = () => {
-        axios.get("http://localhost:4000/user/user1/")
+        axios.get("/user/user1/")
             .then((res) => {
                 setUsers(res.data.users);
             })
@@ -27,7 +27,7 @@ export const UserList = () => {
 
     // Delete a user
     const deleteUser = (id) => {
-        axios.delete(`http://localhost:4000/user/user/${id}`)
+        axios.delete(`/user/user/${id}`)
             .then(() => {
                 getUser();
                 toast.success("User deleted successfully");

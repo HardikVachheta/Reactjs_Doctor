@@ -1,18 +1,18 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import axios from "axios";
+import axios from '../../utils/axiosConfig';
 import { useState, useEffect } from "react";
 import { get } from "react-hook-form";
 import { Helmet } from "react-helmet";
 
-export const ViewProfile1 = () => {
+export const ViewProfile = () => {
   const [docList, setDoc] = useState();
   var id = useParams().id;
 
 
   const getApi = () => {
 
-    axios.get("http://localhost:4000/doctor/get/" + id).then((res) => {
+    axios.get("/doctor/get/" + id).then((res) => {
       console.log(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>", res.users);
       setDoc(res.data.data);
     })
@@ -43,9 +43,6 @@ export const ViewProfile1 = () => {
         <link rel="stylesheet" href="../assetsdoc/css/style.css" />
 
       </Helmet>
-      <div class="layout-page">
-        <div class="content-wrapper">
-          <div class="container-xxl flex-grow-1 container-p-y">
             <div className="content-profile">
               <div className="container-fluid">
 
@@ -86,8 +83,6 @@ export const ViewProfile1 = () => {
               </div>
             </div>
           </div>
-        </div>
-      </div>
-    </div>
+        
   );
 };

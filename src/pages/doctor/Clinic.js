@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Country, State, City } from 'country-state-city';
 import { useForm } from 'react-hook-form';
-import axios from 'axios';
+import axios from '../../utils/axiosConfig';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 // import Indian_states_cities_list from "indian-states-cities-list";
@@ -43,7 +43,7 @@ export const Clinic = () => {
     }, [])
 
     const getState = () => {
-        axios.get("http://localhost:4000/state/get").then((res) => {
+        axios.get("/state/get").then((res) => {
             console.log("state data ----", res.data.data)
             setState(res.data.data)
 
@@ -53,7 +53,7 @@ export const Clinic = () => {
     }
 
     const getCity = () => {
-        axios.get("http://localhost:4000/city/get1").then((res) => {
+        axios.get("/city/get1").then((res) => {
             console.log("city data ----", res.data.users)
             setCity(res.data.users)
 
@@ -64,7 +64,7 @@ export const Clinic = () => {
 
 
     // const getClinic = () => {
-    //     axios.get("http://localhost:4000/clinic/get1").then((res) => {
+    //     axios.get("/clinic/get1").then((res) => {
     //         console.log("clinic data ----", res.data.users)
     //         setState(res.data.data)
 
@@ -78,7 +78,7 @@ export const Clinic = () => {
     const submit = (data) => {
 
         console.log(data)
-        axios.post("http://localhost:4000/clinic/add", data).then((res) => {
+        axios.post("/clinic/add", data).then((res) => {
             console.log("clinic data ----", res.data.data)
             if (res.status === 201) {
                 toast.success('Your Data Updated Successfully...', {

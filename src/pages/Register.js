@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios from '../utils/axiosConfig';
 import React, { useEffect, useState } from 'react'
 import { Helmet } from 'react-helmet'
 import { useForm } from 'react-hook-form'
@@ -23,7 +23,7 @@ export const Register = () => {
     const submit = (data) => {
 
         console.log(data)
-        axios.post("http://localhost:4000/user/user", data).then((res) => {
+        axios.post("/user/user", data).then((res) => {
 
             // console.log(res.data.data.fname)
             if (res.status === 201) {
@@ -46,7 +46,7 @@ export const Register = () => {
 
     const getRoles = () => {
 
-        axios.get("http://localhost:4000/role/get").then((res) => {
+        axios.get("/role/get").then((res) => {
             //console.log(res.data.data)
             setroles(res.data.data)
         })

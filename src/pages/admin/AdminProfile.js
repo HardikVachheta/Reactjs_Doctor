@@ -1,4 +1,4 @@
-import axios from 'axios'
+import axios from '../../utils/axiosConfig';
 import React, { useEffect, useState } from 'react'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -24,7 +24,7 @@ export const AdminProfile = () => {
 
     const getUser = () => {
         axios
-            .get(`http://localhost:4000/user/user/${id}`)
+            .get(`/user/user/${id}`)
             .then((res) => {
                 if (res.data.data?.role.name === 'Admin') {
                     setUsers(res.data.data);
@@ -38,7 +38,7 @@ export const AdminProfile = () => {
 
     const handleupdate = (event) => {
         event.preventDefault();
-        axios.put(`http://localhost:4000/user/update/${id}`, values).then((res) => {
+        axios.put(`/user/update/${id}`, values).then((res) => {
             if (res.status === 200) {
                 toast.success('Your Data Updated Successfully...', {
                     position: 'top-right',

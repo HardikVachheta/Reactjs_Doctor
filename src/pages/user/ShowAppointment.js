@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import axios from 'axios';
+import axios from '../../utils/axiosConfig';
 
 export const ShowAppointment = () => {
 
@@ -19,7 +19,7 @@ export const ShowAppointment = () => {
 
         var id = localStorage.getItem('id')
 
-        axios.get("http://localhost:4000/appointment/getUser/" + id).then((res) => {
+        axios.get("/appointment/getUser/" + id).then((res) => {
             console.log(res.data.data)
             setAppointment(res.data.data)
 
@@ -40,7 +40,7 @@ export const ShowAppointment = () => {
         } else if (date1 > date2) {
             console.log("delete" + delid);
 
-            axios.delete("http://localhost:4000/appointment/delete/" + delid).then((res) => {
+            axios.delete("/appointment/delete/" + delid).then((res) => {
 
             }).catch((err) => {
                 console.log(err)
@@ -64,7 +64,7 @@ export const ShowAppointment = () => {
     //     } else if (date1 > date2) {
     //         console.log("delete" + delid);
 
-    //         axios.delete("http://localhost:4000/user/user/" + delid).then((res) => {
+    //         axios.delete("/user/user/" + delid).then((res) => {
     //             getAppointmentOfUser()
     //         }).catch((err) => {
     //             console.log(err)

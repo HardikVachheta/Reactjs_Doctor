@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import axios from 'axios'
+import axios from '../../utils/axiosConfig';
 import { Link } from 'react-router-dom'
 
 export const AllDoctors = () => {
@@ -13,7 +13,7 @@ export const AllDoctors = () => {
     }, [])
 
     const getDoctor = () => {
-        axios.get("http://localhost:4000/user/user1").then((res) => {
+        axios.get("/user/user1").then((res) => {
 
             // console.log("res :- ", res.data)
             // console.log("res users :- ", res.data.users)
@@ -34,7 +34,7 @@ export const AllDoctors = () => {
     }
 
     const getSpecification = () => {
-        axios.get("http://localhost:4000/doctor/get2").then((res) => {
+        axios.get("/doctor/get2").then((res) => {
 
             console.log("doctors........... :- ", res.data.data)
             // console.log("Users id :- ", res.data.users[0]?.userId[0]?._id)
@@ -71,7 +71,7 @@ export const AllDoctors = () => {
                                                 <div class="card-body text-center">
                                                     <p>Name : {u.userId.fname}<br></br>
                                                         Specialization : {u.specialization}</p>
-                                                    <Link to={`/viewprofile/${u.userId._id}`}>ViewProfile</Link>
+                                                    <Link to={`/admin/viewprofile/${u.userId._id}`}>ViewProfile</Link>
                                                 </div>
                                             </div>
                                         </div>

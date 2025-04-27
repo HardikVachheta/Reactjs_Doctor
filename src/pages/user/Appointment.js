@@ -1,5 +1,5 @@
 import { faAlignLeft } from '@fortawesome/free-solid-svg-icons';
-import axios from 'axios'
+import axios from '../../utils/axiosConfig';
 import React, { useEffect, useState } from 'react'
 import { Helmet } from 'react-helmet'
 import { useForm } from 'react-hook-form'
@@ -18,7 +18,7 @@ export const Appointment = () => {
     const submit = (data) => {
 
         console.log(data)
-        axios.post("http://localhost:4000/appointment/add", data).then((res) => {
+        axios.post("/appointment/add", data).then((res) => {
 
             if (res.status === 201) {
                 toast.success('Your Data Updated Successfully...', {
@@ -58,7 +58,7 @@ export const Appointment = () => {
 
     const getDoctorClinic = () => {
 
-        axios.get("http://localhost:4000/clinic/get").then((res) => {
+        axios.get("/clinic/get").then((res) => {
             console.log(res.data.data)
             console.log("doctor id get", docid)
             // console.log("doctor id get 2",res.data.data?.doctorId._id)
